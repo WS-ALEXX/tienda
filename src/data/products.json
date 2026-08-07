@@ -10,7 +10,7 @@
     "stock": 12,
     "rating": 4.8,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/colet-basico.png"],
+    "imagenes": ["/img-products/colet-basico.png"],
     "oferta": false,
     "masVendido": false
   },
@@ -25,7 +25,7 @@
     "stock": 12,
     "rating": 4.7,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/colet-cereza.jpg"],
+    "imagenes": ["/img-products/colet-cereza.jpg"],
     "oferta": false,
     "masVendido": false
   },
@@ -40,7 +40,7 @@
     "stock": 12,
     "rating": 4.9,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/esponjas-maquillaje.jpg"],
+    "imagenes": ["/img-products/esponjas-maquillaje.jpg"],
     "oferta": false,
     "masVendido": true
   },
@@ -55,7 +55,7 @@
     "stock": 12,
     "rating": 4.6,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/gancho-margarita.jpg"],
+    "imagenes": ["/img-products/gancho-margarita.jpg"],
     "oferta": false,
     "masVendido": false
   },
@@ -70,7 +70,7 @@
     "stock": 12,
     "rating": 4.8,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/gancho-tropical.jpg"],
+    "imagenes": ["/img-products/gancho-tropical.jpg"],
     "oferta": false,
     "masVendido": true
   },
@@ -85,7 +85,7 @@
     "stock": 12,
     "rating": 4.7,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/ganchos-cute.jpg"],
+    "imagenes": ["/img-products/ganchos-cute.jpg"],
     "oferta": false,
     "masVendido": false
   },
@@ -100,7 +100,7 @@
     "stock": 12,
     "rating": 4.6,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/ganchos-transparentes.jpg"],
+    "imagenes": ["/img-products/ganchos-transparentes.jpg"],
     "oferta": false,
     "masVendido": false
   },
@@ -116,8 +116,9 @@
     "rating": 5.0,
     "numResenas": 0,
     "imagenes": [
-      "/src/assets/img-products/labial-lip-matte.jpg",
-      "/src/assets/img-products/labial-lip-matte-caja.jpg"],
+      "/img-products/labial-lip-matte.jpg",
+      "/img-products/labial-lip-matte-caja.jpg"
+    ],
     "oferta": true,
     "masVendido": true
   },
@@ -132,7 +133,7 @@
     "stock": 13,
     "rating": 4.9,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/mascarilla-facial.jpg"],
+    "imagenes": ["/img-products/mascarilla-facial.jpg"],
     "oferta": false,
     "masVendido": false
   },
@@ -147,7 +148,7 @@
     "stock": 12,
     "rating": 4.7,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/panitos-humedos.jpg"],
+    "imagenes": ["/img-products/panitos-humedos.jpg"],
     "oferta": false,
     "masVendido": false
   },
@@ -162,7 +163,7 @@
     "stock": 5,
     "rating": 4.8,
     "numResenas": 0,
-    "imagenes": ["/src/assets/img-products/tablero-capibara.jpg"],
+    "imagenes": ["/img-products/tablero-capibara.jpg"],
     "oferta": false,
     "masVendido": false
   }

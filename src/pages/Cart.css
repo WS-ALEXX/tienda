@@ -130,3 +130,23 @@
     background:#111827;
     color:#fff;
 }
+
+.payment-modal__download {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: transparent;
+  color: #111827;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.payment-modal__download:hover {
+  border-color: #111827;
+  background: #111827;
+  color: #fff;
+}

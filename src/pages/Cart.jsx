@@ -20,6 +20,15 @@ export default function Cart() {
   const envio = items.length > 0 ? 15 : 0;
   const total = subtotal + envio;
 
+  const descargarQR = () => {
+    const link = document.createElement("a");
+    link.href = "/qr-pay/qr.jpg";
+    link.download = "QR-Pago.jpg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const confirmarPago = async () => {
     try {
       setLoading(true);
@@ -42,14 +51,17 @@ export default function Cart() {
         })),
       };
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/user/pedido/create`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`, 
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/user/pedido/create`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
+          },
+          body: JSON.stringify(venta),
         },
-        body: JSON.stringify(venta),
-      });
+      );
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => null);
@@ -136,10 +148,14 @@ export default function Cart() {
             <h2>Escanea el QR</h2>
 
             <img
-              src="src/assets/qr-pay/qr.jpg"
+              src="/qr-pay/qr.jpg"
               alt="QR de pago"
               className="payment-modal__qr"
             />
+            
+            <button onClick={descargarQR} className="payment-modal__download">
+              Descargar QR
+            </button>
 
             <p>Escanea el código QR y realiza el pago.</p>
 
