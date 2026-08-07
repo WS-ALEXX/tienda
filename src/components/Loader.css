@@ -1,0 +1,33 @@
+.loader { display: flex; align-items: center; gap: 10px; padding: 40px 0; justify-content: center; color: var(--ink-soft); }
+.loader__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gray-300);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.loader__label { font-size: 0.85rem; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.skeleton-card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skeleton-card__image { aspect-ratio: 1 / 1; border-radius: var(--radius-sm); }
+.skeleton-card__line { height: 12px; border-radius: 4px; }
+
+.shimmer {
+  background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 37%, var(--gray-100) 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}

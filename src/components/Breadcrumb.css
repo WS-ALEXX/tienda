@@ -1,0 +1,10 @@
+.breadcrumb {
+  display: flex;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  font-family: var(--font-mono);
+  margin-bottom: 18px;
+}
+.breadcrumb__item a:hover { color: var(--accent); }
+.breadcrumb__sep { margin-left: 6px; color: var(--gray-300); }

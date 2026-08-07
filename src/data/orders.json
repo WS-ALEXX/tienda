@@ -1,0 +1,13 @@
+[
+  {
+    "id": "ORD-1042",
+    "usuarioId": 1,
+    "fecha": "2026-07-10",
+    "estado": "Entregado",
+    "total": 289.9,
+    "items": [
+      { "productoId": 3, "nombre": "Bota Trail Grip", "cantidad": 1, "precio": 189.9 },
+      { "productoId": 22, "nombre": "Lentes Sol Wave", "cantidad": 1, "precio": 100.0 }
+    ]
+  }
+]

@@ -1,0 +1,96 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 250, 250, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.navbar__top {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar__burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.navbar__search { flex: 1; display: flex; }
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.navbar__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  position: relative;
+}
+.navbar__action:hover { background: var(--gray-100); color: var(--ink); }
+.navbar__action-icon { font-size: 1.05rem; }
+.navbar__action-label { font-size: 0.66rem; font-weight: 600; }
+
+.navbar__cart-count {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+.navbar__categories { border-top: 1px solid var(--gray-200); background: var(--surface); }
+.navbar__categories-inner {
+  display: flex;
+  gap: 26px;
+  padding: 10px 20px;
+  overflow-x: auto;
+}
+.navbar__categories-inner a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.navbar__categories-inner a:hover { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .navbar__search { display: none; }
+  .navbar__burger { display: block; }
+  .navbar__action-label { display: none; }
+  .navbar__categories { display: none; }
+  .navbar__categories.is-open { display: block; }
+  .navbar__categories-inner { flex-direction: column; gap: 4px; }
+}

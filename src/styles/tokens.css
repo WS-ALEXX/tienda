@@ -1,0 +1,86 @@
+/* ===== Design tokens =====
+   Palette: near-white paper, near-black ink, cobalt accent (catalog/ticket aesthetic)
+*/
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --ink: #121218;
+  --ink-soft: #4d4d57;
+  --gray-100: #f1f1f4;
+  --gray-200: #e6e6ea;
+  --gray-300: #d6d6dc;
+  --gray-500: #8a8a94;
+  --gray-600: #63636f;
+
+  --accent: #2b4eff;
+  --accent-ink: #0c1b99;
+  --accent-soft: #eaeeff;
+
+  --danger: #d6455a;
+  --danger-soft: #fdeaed;
+  --success: #1f8a57;
+  --success-soft: #e8f6ee;
+  --star: #ff9f1c;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 2px rgba(18, 18, 24, 0.06), 0 1px 1px rgba(18, 18, 24, 0.04);
+  --shadow-md: 0 8px 24px rgba(18, 18, 24, 0.08);
+  --shadow-lg: 0 20px 48px rgba(18, 18, 24, 0.14);
+
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', monospace;
+
+  --container: 1240px;
+  --nav-h: 68px;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.price-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 10px; }
+
+.app-shell { min-height: 100%; display: flex; flex-direction: column; }
+.app-shell main { flex: 1; }
