@@ -17,7 +17,12 @@ export default function Cart() {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const envio = items.length > 0 ? 15 : 0;
+  var envio = items.length > 0 ? 5 : 0;
+
+  if (subtotal >= 10) {
+    envio = 0;
+  }
+
   const total = subtotal + envio;
 
   const descargarQR = () => {
