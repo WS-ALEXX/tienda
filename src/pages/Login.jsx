@@ -34,20 +34,20 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbmRyYWRlYkBhdXRvbm9tYS5lZHUucGUiLCJpYXQiOjE1MTYyMzkwMjJ9.DUkVzCHciwF_my2RfWEjZajRRKos5Kvfauufzi4rkIg";
-
-      const response = await fetch("http://127.0.0.1:5500/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/user/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
+          },
+          body: JSON.stringify({
+            email: form.correo,
+            password: form.password,
+          }),
         },
-        body: JSON.stringify({
-          email: form.correo,
-          password: form.password,
-        }),
-      });
+      );
 
       const data = await response.json();
 

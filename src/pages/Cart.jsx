@@ -157,7 +157,7 @@ export default function Cart() {
               alt="QR de pago"
               className="payment-modal__qr"
             />
-            
+
             <button onClick={descargarQR} className="payment-modal__download">
               Descargar QR
             </button>
