@@ -27,7 +27,7 @@
     "numResenas": 0,
     "imagenes": ["/img-products/colet-cereza.jpg"],
     "oferta": false,
-    "masVendido": false
+    "masVendido": true
   },
   {
     "id": 3,
@@ -70,7 +70,15 @@
     "stock": 12,
     "rating": 4.8,
     "numResenas": 0,
-    "imagenes": ["/img-products/gancho-tropical.jpg"],
+    "imagenes": [
+      "/img-products/gancho-tropical.jpg",
+      "/img-products/gancho-tropical-aqua-teal-green.jpg",
+      "/img-products/gancho-tropical-rose-petal-pink.jpg",
+      "/img-products/gancho-tropical-sunshine-yellow.jpg",
+      "/img-products/gancho-tropical-levander-sky-blue.jpg",
+      "/img-products/gancho-tropical-coral-sunset-orange.jpg",
+      "/img-products/gancho-tropical-magenta-deep-pink.jpg"
+    ],
     "oferta": false,
     "masVendido": true
   },
@@ -85,7 +93,11 @@
     "stock": 12,
     "rating": 4.7,
     "numResenas": 0,
-    "imagenes": ["/img-products/ganchos-cute.jpg"],
+    "imagenes": [
+      "/img-products/ganchos-cute.jpg",
+      "/img-products/ganchos-cute-cereza.jpg",
+      "/img-products/ganchos-cute-fresa.jpg"
+    ],
     "oferta": false,
     "masVendido": false
   },
@@ -133,9 +145,15 @@
     "stock": 13,
     "rating": 4.9,
     "numResenas": 0,
-    "imagenes": ["/img-products/mascarilla-facial.jpg"],
+    "imagenes": [
+      "/img-products/mascarilla-facial.jpg",
+      "/img-products/mascarilla-facial-rojo.jpg",
+      "/img-products/mascarilla-facial-morado.jpg",
+      "/img-products/mascarilla-facial-verde.jpg",
+      "/img-products/mascarilla-facial-rosa.jpg"
+    ],
     "oferta": false,
-    "masVendido": false
+    "masVendido": true
   },
   {
     "id": 10,
@@ -150,7 +168,7 @@
     "numResenas": 0,
     "imagenes": ["/img-products/panitos-humedos.jpg"],
     "oferta": false,
-    "masVendido": false
+    "masVendido": true
   },
   {
     "id": 11,

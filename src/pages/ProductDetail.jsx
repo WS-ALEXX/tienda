@@ -10,6 +10,24 @@ import Badge from "../components/Badge";
 import Loader from "../components/Loader";
 import "./ProductDetail.css";
 
+// Función auxiliar para formatear el nombre de la variante desde la URL de la imagen
+function getVariantName(imgUrl) {
+  if (!imgUrl) return "";
+  
+  // Extrae el nombre del archivo sin extensión (ej: "gancho-tropical-aqua-teal-green")
+  const filename = imgUrl.split("/").pop().split(".")[0];
+  const parts = filename.split("-");
+
+  // Si es la foto principal sin sufijos de color
+  if (parts.length <= 2) return "";
+
+  // Toma las palabras de la variante y las capitaliza ("aqua", "teal", "green" -> "Aqua Teal Green")
+  return parts
+    .slice(2)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(undefined);
@@ -35,6 +53,26 @@ export default function ProductDetail() {
     );
   }
 
+  // 1. Cálculo dinámico de la variante y título
+  const selectedImage = product.imagenes[activeImg];
+  const variantName = getVariantName(selectedImage);
+  const dynamicTitle = variantName
+    ? `${product.nombre} ${variantName}`
+    : product.nombre;
+
+  // 2. Handler para agregar al carrito con la imagen y título seleccionados
+  const handleAddToCart = () => {
+    const productForCart = {
+      ...product,
+      id: `${product.id}-${activeImg}`, // ID único si quieres diferenciar variantes en el carrito
+      nombre: dynamicTitle,
+      // Se coloca la imagen seleccionada como la primera opción
+      imagenes: [selectedImage, ...product.imagenes.filter((img) => img !== selectedImage)],
+    };
+
+    addItem(productForCart, qty);
+  };
+
   const fav = isFavorite(product.id);
 
   return (
@@ -43,14 +81,14 @@ export default function ProductDetail() {
         items={[
           { label: "Inicio", to: "/" },
           { label: "Tienda", to: "/tienda" },
-          { label: product.nombre },
+          { label: dynamicTitle },
         ]}
       />
 
       <div className="product-detail__layout">
         <div className="product-detail__gallery">
           <div className="product-detail__main-image">
-            <img src={product.imagenes[activeImg]} alt={product.nombre} />
+            <img src={selectedImage} alt={dynamicTitle} />
           </div>
           <div className="product-detail__thumbs">
             {product.imagenes.map((img, i) => (
@@ -67,7 +105,10 @@ export default function ProductDetail() {
 
         <div className="product-detail__info">
           <span className="product-detail__sku">{product.sku}</span>
-          <h1>{product.nombre}</h1>
+          
+          {/* Título dinámico que cambia al seleccionar una miniatura */}
+          <h1>{dynamicTitle}</h1>
+          
           <StarRating rating={product.rating} reviews={product.numResenas} />
 
           <div className="product-detail__price price-mono">
@@ -104,7 +145,7 @@ export default function ProductDetail() {
             <button
               className="product-detail__add"
               disabled={product.stock === 0}
-              onClick={() => addItem(product, qty)}
+              onClick={handleAddToCart}
             >
               {product.stock === 0 ? "Agotado" : "Agregar al carrito"}
             </button>
